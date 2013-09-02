@@ -1,0 +1,9 @@
+{
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "name": "app_server",
+  "description": "Appd app server",
+  "run_list": [
+    "recipe[sudo]"
+   ]
+}
