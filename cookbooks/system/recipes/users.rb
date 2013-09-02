@@ -5,9 +5,9 @@
 admin_keys = "/root/admin_keys"
 if Dir.exist? admin_keys then
   Dir.foreach admin_keys do |entry|
-    if File.file? "#{admin_key}/#{entry}" and entry =~ /.*\.pub/ then
+    if File.file? "#{admin_keys}/#{entry}" and entry =~ /.*\.pub/ then
       user_name = entry.split(/(.*)\.pub/)[1]
-      key = "#{admin_key}/#{entry}"
+      key = "#{admin_keys}/#{entry}"
 
       # Create the user and give him admin rights
       user "admin #{user_name}" do
