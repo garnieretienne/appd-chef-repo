@@ -4,6 +4,7 @@
   "name": "app_server",
   "description": "Appd app server",
   "run_list": [
-    "recipe[sudo]"
+    "recipe[sudo]",
+    "recipe[system::users]"
    ]
 }
