@@ -20,7 +20,7 @@ if Dir.exist? admin_keys then
         notifies :run, "execute[register '#{user_name}' key]"
         notifies :run, "execute[ask '#{user_name}' to change its password on first login]"
       end
-      group "sudo" do
+      group "sysop" do
       	members user_name
         system true
         append true
