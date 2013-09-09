@@ -4,6 +4,6 @@ package 'sudo' do
 end
 
 # Ensure 'sysop' group can execute sudo command with no password
-template "sysop" do
+template "/etc/sudoers.d/sysop" do
   action :create
 end
