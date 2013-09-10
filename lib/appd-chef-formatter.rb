@@ -6,7 +6,7 @@ class Chef
 
       def resource_action_start(resource, action, notification_type = nil, notifier = nil)
         if resource.cookbook_name && resource.recipe_name
-          resource_recipe = "#{resource.cookbook_name.downcase} #{resource.recipe_name.downcase}:"
+          resource_recipe = "#{resource.cookbook_name.downcase} #{resource.recipe_name.downcase if resource.recipe_name.downcase != default}:"
         else
           resource_recipe = "<Dynamically Defined Resource>"
         end
