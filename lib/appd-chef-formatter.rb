@@ -6,7 +6,7 @@ class Chef
 
       def resource_action_start(resource, action, notification_type = nil, notifier = nil)
         if resource.cookbook_name && resource.recipe_name
-          resource_recipe = "#{resource.cookbook_name.capitalize} (#{resource.recipe_name.downcase})"
+          resource_recipe = "#{resource.cookbook_name.downcase} #{resource.recipe_name.downcase}:"
         else
           resource_recipe = "<Dynamically Defined Resource>"
         end
@@ -16,7 +16,7 @@ class Chef
           @current_recipe = resource_recipe
         end
 
-        print "* #{action if action != :execute} #{resource.name} #{resource.resource_name}..." if action != :nothing
+        print "* #{action if action != :execute} '#{resource.name}' #{resource.resource_name}..." if action != :nothing
       end
 
       def resource_up_to_date(resource, action)
