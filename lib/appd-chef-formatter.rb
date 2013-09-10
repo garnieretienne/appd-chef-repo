@@ -16,15 +16,15 @@ class Chef
           @current_recipe = resource_recipe
         end
 
-        print "* #{action if action != :execute} #{resource.name} #{resource.resource_name}" if action != :nothing
+        print "* #{action if action != :execute} #{resource.name} #{resource.resource_name}..." if action != :nothing
       end
 
       def resource_up_to_date(resource, action)
-        puts " (nothing to do)"
+        puts "\b\b\b\b (nothing to do)"
       end
 
       def resource_updated(resource, action)
-        puts " (done)"
+        puts "\b\b\b\b (done)"
       end
     end
   end
