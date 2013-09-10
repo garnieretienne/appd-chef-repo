@@ -5,15 +5,26 @@ class Chef
       cli_name(:appd)
 
       def resource_action_start(resource, action, notification_type = nil, notifier = nil)
+        if resource.cookbook_name && resource.recipe_name
+          resource_recipe = "#{resource.cookbook_name.capitalize} (#{resource.recipe_name.downcase})"
+        else
+          resource_recipe = "<Dynamically Defined Resource>"
+        end
+
+        if resource_recipe != @current_recipe
+          puts "Configuring #{resource_recipe}"
+          @current_recipe = resource_recipe
+        end
+
         print "* #{action if action != :execute} #{resource.name} #{resource.resource_name}" if action != :nothing
       end
 
       def resource_up_to_date(resource, action)
-        puts "(nothing to do)"
+        puts " (nothing to do)"
       end
 
       def resource_updated(resource, action)
-        puts "(#{resource} #{action})"
+        puts " (done)"
       end
     end
   end
