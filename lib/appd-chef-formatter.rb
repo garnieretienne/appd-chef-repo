@@ -4,6 +4,10 @@ class Chef
 
       cli_name(:appd)
 
+      def resource_action_start(resource, action, notification_type = nil, notifier = nil)
+        print "* #{action} #{resource.name} #{resource.resource_name}"
+      end
+
       def resource_completed(resource)
         puts "OK!"
         super
