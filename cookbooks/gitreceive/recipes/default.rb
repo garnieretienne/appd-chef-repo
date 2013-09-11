@@ -5,7 +5,7 @@ end
 
 # Create the git user
 user "deploy" do
-  username deploy
+  username "deploy"
   comment "GIT receive user"
   shell "/bin/false"
   home "/srv/git/deploy"
