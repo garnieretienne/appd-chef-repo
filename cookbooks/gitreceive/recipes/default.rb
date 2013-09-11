@@ -8,13 +8,13 @@ user "deploy" do
   username "deploy"
   comment "GIT receive user"
   shell "/bin/false"
-  home "/srv/git/deploy"
+  home "/srv/git"
   supports manage_home: true
   action :create
 end
 
 # Create a bin dir in the git user home
-directory "/srv/git/deploy/bin" do
+directory "/srv/git/bin" do
   owner "deploy"
   group "deploy"
   mode 0755
