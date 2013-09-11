@@ -5,7 +5,7 @@
   "description": "Appd app server",
   "run_list": [
     "recipe[sudo]",
-    "recipe[system::users]"
+    "recipe[system::users]",
     "recipe[nginx]"
    ]
 }
