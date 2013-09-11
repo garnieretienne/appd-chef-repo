@@ -6,6 +6,7 @@
   "run_list": [
     "recipe[sudo]",
     "recipe[system::users]",
-    "recipe[nginx]"
+    "recipe[nginx]",
+    "recipe[gitreceive]"
    ]
 }
