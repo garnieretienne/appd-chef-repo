@@ -16,7 +16,8 @@ class Chef
           @current_recipe = resource_recipe
         end
 
-        print "* #{action} '#{resource.name}' #{resource.resource_name if resource.resource_name != "execute"}..." if action != :nothing
+        # print "* #{action} '#{resource.name}' #{resource.resource_name if resource.resource_name != "execute"}..." if action != :nothing
+        print "* #{action} '#{resource.name}' #{resource.resource_name.class}..." if action != :nothing
       end
 
       def resource_up_to_date(resource, action)
