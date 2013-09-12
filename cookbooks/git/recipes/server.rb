@@ -7,16 +7,16 @@ end
 user "deploy" do
   username "deploy"
   comment "GIT receive user"
-  shell "/bin/false"
+  shell "/usr/bin/git-shell"
   home "/srv/git"
   supports manage_home: true
   action :create
 end
 
-# Create a bin dir in the git user home
-directory "/srv/git/bin" do
+# Create the ssh dir
+directory "/srv/git/.ssh" do
   owner "deploy"
   group "deploy"
-  mode 0755
+  mode 0775
   action :create
 end

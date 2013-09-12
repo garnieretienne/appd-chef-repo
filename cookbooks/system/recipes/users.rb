@@ -50,6 +50,12 @@ if Dir.exist? admin_keys then
         command "echo #{user_name}:#{user_name} | chpasswd && chage -d 0 #{user_name}"
         action :nothing
       end
+
+      # Allow the user to use the git server
+      execute "allow '#{user_name}' to deploy applications" do
+        command "cat #{key} >> /srv/git/.ssh/authorized_keys"
+        action :nothing
+      end
     end
   end
 end
