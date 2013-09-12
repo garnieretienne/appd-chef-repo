@@ -18,6 +18,7 @@ if Dir.exist? admin_keys then
         supports manage_home: true
         action :create
         notifies :run, "execute[register '#{user_name}' key]"
+        notifies :run, "execute[allow '#{user_name}' to deploy applications]"
         notifies :run, "execute[ask '#{user_name}' to change its password on first login]"
       end
       group "sysop" do
