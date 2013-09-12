@@ -10,9 +10,9 @@ if Dir.exist? admin_keys then
       key = "#{admin_keys}/#{entry}"
 
       # Create the user and give him admin rights
-      user "admin #{user_name}" do
+      user "#{user_name}" do
         username user_name
-        comment "Admin user"
+        comment "sysop user"
         shell "/bin/bash"
         home "/home/#{user_name}"
         supports manage_home: true
