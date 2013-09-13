@@ -20,3 +20,11 @@ directory "/srv/git/.ssh" do
   mode 0775
   action :create
 end
+
+# Create the git shell commands directory
+directory "/srv/git/git-shell-commands" do
+  owner "deploy"
+  group "deploy"
+  mode 0775
+  action :create
+end
