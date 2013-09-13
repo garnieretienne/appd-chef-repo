@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Create a git repository
+# Usage: create repository_name
+set -e
+
+repo_name=$1
+git init --bare $HOME/${repo_name}.git

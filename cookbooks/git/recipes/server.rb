@@ -28,3 +28,9 @@ directory "/srv/git/git-shell-commands" do
   mode 0775
   action :create
 end
+
+# Script to create a new repository
+template "/srv/git/git-shell-commands/create" do
+  mode 0775
+  action :create
+end
